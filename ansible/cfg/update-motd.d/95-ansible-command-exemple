@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cat <<EOF
+
+**************************************************************
+* ANSIBLE     exemple
+**************************************************************
+
+EOF
+echo "ansible all -i inventory.ini -m ping"
+echo "ansible all -i inventory.ini -m shell -a \"uptime;free\""
