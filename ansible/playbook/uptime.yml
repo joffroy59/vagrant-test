@@ -1,0 +1,13 @@
+---
+- hosts: all
+  sudo: yes
+  gather_facts: no
+  remote_user: vagrant
+
+  tasks:
+
+  - name: uptime
+    shell: uptime || /bin/true
+    register: uptime
+
+  - debug: msg="{{ uptime.stdout }}"
