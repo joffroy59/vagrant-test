@@ -1,5 +1,8 @@
 # Ansible
 
+# pour initialiser les clef ssh avec les linux :
+
+
 ## machine
 
   - web
