@@ -16,3 +16,5 @@ cp -rf /vagrant/playbook/.ssh /home/vagrant/
 ssh-keyscan linux1 >> /home/vagrant/.ssh/known_hosts
 ssh-keyscan linux2 >> /home/vagrant/.ssh/known_hosts
 
+apt-get -y install dos2unix
+
