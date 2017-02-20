@@ -33,6 +33,11 @@ Vagrant.configure("2") do |config|
       end
       mgmt_config.vm.provision :shell, path: "bootstrap-ansible.sh"
       mgmt_config.vm.provision :shell, path: "bootstrap-mgmt.sh"
+      mgmt_config.vm.provision "file", source: "cfg/update-motd.d/95-ansible-command-exemple", destination: "/tmp/95-ansible-command-exemple"
+      mgmt_config.vm.provision "shell", 
+        inline: "mv /tmp/95-ansible-command-exemple /etc/update-motd.d/95-ansible-command-exemple;\
+        chown root:root /etc/update-motd.d/95-ansible-command-exemple;\
+        chmod a+x /etc/update-motd.d/95-ansible-command-exemple"
   end
 
 end
