@@ -6,13 +6,19 @@
   - dev
   - linux1
   - linux2
+  - linux3
+
+## description
+multiple machine for ansible test 
+create with a loop 
+
 
 ## log `$ time vagrant up | tee /dev/tty |clip`
 
 ```
-real    1m57.203s
-user    0m0.030s
-sys     0m0.046s
+real    2m44.156s
+user    0m0.061s
+sys     0m0.061s
 ```
 
 ```
@@ -20,6 +26,7 @@ Bringing machine 'web' up with 'virtualbox' provider...
 Bringing machine 'db' up with 'virtualbox' provider...
 Bringing machine 'linux1' up with 'virtualbox' provider...
 Bringing machine 'linux2' up with 'virtualbox' provider...
+Bringing machine 'linux3' up with 'virtualbox' provider...
 ==> web: Checking if box 'ubuntu/trusty64' is up to date...
 ==> web: A newer version of the box 'ubuntu/trusty64' is available! You currently
 ==> web: have version '20161129.0.0'. The latest is version '20161214.0.1'. Run
@@ -145,5 +152,53 @@ Bringing machine 'linux2' up with 'virtualbox' provider...
     linux2: /vagrant => C:/dev/vagrant/ansible
 ==> linux2: Machine already provisioned. Run `vagrant provision` or use the `--provision`
 ==> linux2: flag to force provisioning. Provisioners marked to run always will still run.
+==> linux3: Importing base box 'ubuntu/trusty64'...
 
+[KProgress: 90%
+[K==> linux3: Matching MAC address for NAT networking...
+==> linux3: Checking if box 'ubuntu/trusty64' is up to date...
+==> linux3: A newer version of the box 'ubuntu/trusty64' is available! You currently
+==> linux3: have version '20161129.0.0'. The latest is version '20161214.0.1'. Run
+==> linux3: `vagrant box update` to update.
+==> linux3: Setting the name of the VM: ansible_linux3_1483646370140_9619
+==> linux3: Clearing any previously set forwarded ports...
+==> linux3: Fixed port collision for 22 => 2222. Now on port 2203.
+==> linux3: Clearing any previously set network interfaces...
+==> linux3: Preparing network interfaces based on configuration...
+    linux3: Adapter 1: nat
+==> linux3: Forwarding ports...
+    linux3: 22 (guest) => 2203 (host) (adapter 1)
+==> linux3: Booting VM...
+==> linux3: Waiting for machine to boot. This may take a few minutes...
+    linux3: SSH address: 127.0.0.1:2203
+    linux3: SSH username: vagrant
+    linux3: SSH auth method: private key
+    linux3: 
+    linux3: Vagrant insecure key detected. Vagrant will automatically replace
+    linux3: this with a newly generated keypair for better security.
+    linux3: 
+    linux3: Inserting generated public key within guest...
+    linux3: Removing insecure key from the guest if it's present...
+    linux3: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> linux3: Machine booted and ready!
+==> linux3: Checking for guest additions in VM...
+    linux3: The guest additions on this VM do not match the installed version of
+    linux3: VirtualBox! In most cases this is fine, but in rare cases it can
+    linux3: prevent things such as shared folders from working properly. If you see
+    linux3: shared folder errors, please make sure the guest additions within the
+    linux3: virtual machine match the version of VirtualBox you have installed on
+    linux3: your host and reload your VM.
+    linux3: 
+    linux3: Guest Additions Version: 4.3.36
+    linux3: VirtualBox Version: 5.1
+==> linux3: Mounting shared folders...
+    linux3: /vagrant => C:/dev/vagrant/ansible
+==> linux3: Running provisioner: shell...
+    linux3: Running: inline script
+==> linux3: stdin: is not a tty
+==> linux3: Hello
+==> linux3: Running provisioner: shell...
+    linux3: Running: inline script
+==> linux3: stdin: is not a tty
+==> linux3: hello from linux 3
 ```
