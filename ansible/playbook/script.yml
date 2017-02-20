@@ -1,0 +1,12 @@
+---
+- hosts: all
+  sudo: yes
+  gather_facts: no
+  remote_user: vagrant
+
+  tasks:
+
+  - script: scripts/echo.sh --some-arguments 1234
+    register: out
+
+  - debug: msg="{{ out.stdout }}"
